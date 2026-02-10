@@ -27,16 +27,29 @@ request.onsuccess = function (event) {
 };
 
 function addTodo() {
+
+  const text = taskInput.value.trim();
+  const category = taskCategory.value.trim();
+
+  if (text === "") {
+    return;
+  }
+
   const transaction = db.transaction("todos", "readwrite");
   const store = transaction.objectStore("todos");
   const task = {
     text: taskInput.value.trim(),
     category: taskCategory.value.trim(),
-    due_date: new Date(),
+    due_date: date.value ? new Date(date.value) : new Date(),
     created_at: new Date(),
     completed_at: null,
   };
   store.add(task);
+
+  taskInput.value = "";
+  taskCategory.value = "";
+  date.value = "";
+
 }
 
 addBtn.addEventListener("click", function (e) {
@@ -161,6 +174,11 @@ searchInput.addEventListener("input", () => {
 // keys 
 document.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
+    
+    if (e.target === date) {
+      e.preventDefault();
+    }
+    
     addBtn.click();
   }});
 
