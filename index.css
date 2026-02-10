@@ -1,0 +1,292 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+a {
+  text-decoration: none;
+  color:inherit;
+}
+ul li {
+  list-style: none;
+  cursor: pointer;
+
+}
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+header {
+  text-align: center;
+  background-color: rgb(241, 235, 235);
+  height: 10vh;
+  padding: 7px;
+}
+header p {
+  color: rgb(87, 89, 90);
+  margin-left: 20px;
+  font-size: 14px;
+}
+#sidebar {
+  height: 90vh;
+  width: 20%;
+  background-color: rgb(171, 177, 177);
+  padding: 20px;
+}
+#sidebar h2 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+#sidebar > ul {
+  font-size: 18px;
+  color: rgb(19, 19, 19);
+}
+#sidebar > ul li {
+  margin-bottom: 10px;
+}
+#sidebar ul ul {
+  margin-left: 10px;
+  font-size: 16px;
+  color: rgb(35, 35, 35);
+}
+#sidebar input {
+  border: none;
+  padding: 4px;
+}
+
+/* ...main... */
+.container {
+  max-width: 1000px;
+  margin-top: 30px;
+  margin-left: 70px;
+}
+.above h1 {
+  color: rgb(41, 42, 42);
+  margin-bottom: 15px;
+}
+.inputbox {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.9fr auto;
+  gap: 12px;
+  margin-bottom: 20px;
+  
+}
+
+.inputbox input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.inputbox input::placeholder {
+  color: #9ca3af;
+}
+
+.inputbox input:focus {
+  border-color: #4f46e5;
+}
+.inputbox input[type="date"] {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  color: #6b7280;
+  outline: none;
+  cursor: pointer;
+}
+
+.inputbox input[type="date"]:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.15);
+}
+
+.inputbox button {
+  height: 38px;
+  width: 38px;
+  border-radius: 8px;
+  border: none;
+  background: #4f46e5;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.inputbox button:hover {
+  background: #4338ca;
+  transform: scale(1.05);
+}
+.search input {
+  width: 240px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+}
+
+.search input:focus {
+  border-color: #22c55e;
+}
+
+.list ul {
+  list-style: none;
+  padding: 0;
+}
+.list {
+  margin-top: 25px;
+}
+
+#tasklist li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+#tasklist li input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+#tasklist li span:nth-of-type(1) {
+  flex: 1; 
+  font-size: 15px;
+  color: #111827;
+}
+#tasklist li span:nth-of-type(2) {
+  padding: 3px 8px;
+  font-size: 12px;
+  border-radius: 8px;
+  color: white;
+}
+
+#tasklist li span:nth-of-type(2){
+  background: #f97316;
+}
+
+.study {
+  background: #8b5cf6;
+}
+
+.coding {
+  background: #2563eb;
+}
+#tasklist li span:nth-of-type(3) {
+  font-size: 12px;
+  color: #6b7280;
+  white-space: nowrap;
+}
+.todo-item input:checked ~ .task-text {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+#tasklist button {
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+  transition: 0.2s ease;
+}
+
+.delete-btn:hover {
+  color: #ef4444;
+  transform: scale(1.2);
+}
+
+.complete {
+  text-decoration: line-through;
+}
+
+.filter {
+  margin-top: 20px;
+}
+.filter button {
+  padding: 4px 10px;
+  border: none;
+  font-size: 15px;
+  color: white;
+  border-radius: 4px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.filter button:nth-child(1) {
+  background-color: #16dd98;
+}
+.filter button:nth-child(2) {
+  background-color: #dfb425;
+}
+.filter button:nth-child(3) {
+  background-color: #2c23d7;
+}
+
+
+@media screen and (max-width:950px ) {
+  .inputbox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+#tasklist li {
+    display: flex;
+    align-items: center;
+    gap: 57px;
+}
+  
+}
+
+@media screen and (max-width:700px ) {
+      #sidebar > ul {
+    font-size: 18px;
+}
+    #tasklist li {
+        gap: 34px;
+    }
+    .container {
+    max-width: 1000px;
+    margin-top: 30px;
+    margin-left: 45px;
+    }
+
+}
+
+@media screen and (max-width:560px ) {
+      #tasklist li {
+        gap: 15px;
+    }
+    .inputbox button {
+    height: 39px;
+    width: 76px;
+    }
+}
+
+@media screen and (max-width:450px ) {
+        .container {
+        max-width: 1000px;
+        margin-top: 18px;
+        margin-left: 24px;
+    }
+
+    #sidebar {
+      display: none;
+    }
+}
+
+
+
+
+
+

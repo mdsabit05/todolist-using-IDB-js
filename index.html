@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>TO do list</title>
+</head>
+
+<body>
+  <header>
+    <h1>📝 My Todo List</h1>
+    <p>Stay focused. Get things done.</p>
+  </header>
+  <main>
+    <div id="sidebar">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="#">Privacy and policies</a></li>
+        <li><a href="#">Setting</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </div>
+    <div id="maincontent">
+      <div class="container">
+        <div class="above">
+          <h1>Things to do</h1>
+          <div class="inputbox">
+            <input id="task" type="text" placeholder="Add todo" >
+            <input id="category" type="text" placeholder="Add category">
+            <!-- <input id="date" type="date"> -->
+            <button id="addbtn" type="button">+</button>
+          </div>
+        </div>
+       <div class="search">
+  <input id="search" type="search" placeholder="search your work">
+</div>
+
+       <div class="filter">
+        <button id="allbtn">All</button>
+        <button id="pendingbtn">Pending</button>
+        <button id="completedbtn">Completed</button>
+       </div>
+
+        <div class="list">
+          <ul id="tasklist">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="index.js" defer></script>
+</body>
+
+</html>
